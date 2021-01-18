@@ -1,0 +1,19 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Sezzle Calculator",
+  "main": "client/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexkim612/Calculator.git"
+  },
+  "author": "Alex Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexkim612/Calculator/issues"
+  },
+  "homepage": "https://github.com/alexkim612/Calculator#readme"
+}
