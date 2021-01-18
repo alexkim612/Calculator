@@ -4,7 +4,8 @@
   "description": "Sezzle Calculator",
   "main": "client/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -d --watch"
   },
   "repository": {
     "type": "git",
@@ -12,8 +13,17 @@
   },
   "author": "Alex Kim",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alexkim612/Calculator/issues"
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.23.0",
+    "webpack": "^2.2.1"
   },
-  "homepage": "https://github.com/alexkim612/Calculator#readme"
+  "dependencies": {
+    "express": "^4.15.0",
+    "morgan": "^1.9.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
 }
