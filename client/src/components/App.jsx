@@ -1,18 +1,44 @@
 import React from 'react';
 import Buttons from './Buttons.jsx';
 import History from './History.jsx';
-import Result from './Result.jsx';
+import ViewingWindow from './ViewingWindow.jsx';
 
 class App extends React.Component {
-  constructor(props){
-    super(props);
+  constructor(){
+    super();
+
+    this.state = {
+      viewingWindow: ''
+    }
+
+    this.btnClick = this.btnClick.bind(this);
+    this.calculate = this.calculate.bind(this);
+    this.clear = this.clear.bind(this);
+  }
+
+  // button clicks
+  btnClick() {
+
+  }
+
+  // calculate
+  calculate() {
+    let result = 0;
+
+  }
+
+  // clear
+  clear() {
+    this.setState({
+      viewingWindow: ''
+    });
   }
   
   render() {
     return (
       <div>
-        <Result>
-        </Result>
+        <ViewingWindow viewingWindow={this.viewingWindow}>
+        </ViewingWindow>
 
         <Buttons>
         </Buttons>
