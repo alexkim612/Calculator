@@ -1,4 +1,7 @@
 import React from 'react';
+import Buttons from './Buttons.jsx';
+import History from './History.jsx';
+import Result from './Result.jsx';
 
 class App extends React.Component {
   constructor(props){
@@ -7,7 +10,16 @@ class App extends React.Component {
   
   render() {
     return (
-      <div>Hello</div>
+      <div>
+        <Result>
+        </Result>
+
+        <Buttons>
+        </Buttons>
+
+        <History>
+        </History>
+      </div>
     );
   }
 }
