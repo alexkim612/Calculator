@@ -17,8 +17,16 @@ class App extends React.Component {
   }
 
   // button clicks
-  btnClick() {
+  btnClick(btn) {
+    let name = btn.target.name;
+    if (btn === 'clear') {
+      this.clear();
+    } else if (btn === 'delete') {
+      let curr = this.state.largeViewingWindow;
 
+    } else if (btn === '=') {
+      this.calculate();
+    }
   }
 
   // calculate
@@ -48,7 +56,7 @@ class App extends React.Component {
           <p>{this.state.largeViewingWindow}</p>
         </div>
 
-        <Buttons>
+        <Buttons btnClick={this.btnClick}>
         </Buttons>
 
         <History>
