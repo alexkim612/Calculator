@@ -8,7 +8,7 @@ class App extends React.Component {
     super();
 
     this.state = {
-      viewingWindow: ''
+      largeViewingWindow: '1+1'
     }
 
     this.btnClick = this.btnClick.bind(this);
@@ -23,8 +23,13 @@ class App extends React.Component {
 
   // calculate
   calculate() {
-    let result = 0;
-
+    let result = eval(this.largeViewingWindow);
+    if (result) {
+      this.largeViewingWindow = result;
+    } else {
+      this.clear();
+      throw new Error ('Arithmetic error');
+    }
   }
 
   // clear
@@ -39,6 +44,9 @@ class App extends React.Component {
       <div>
         <ViewingWindow viewingWindow={this.viewingWindow}>
         </ViewingWindow>
+        <div className="largeViewingWindow">
+          <p>{this.state.largeViewingWindow}</p>
+        </div>
 
         <Buttons>
         </Buttons>
