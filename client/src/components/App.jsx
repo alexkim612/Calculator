@@ -19,12 +19,15 @@ class App extends React.Component {
   // button clicks
   btnClick(btn) {
     let name = btn.target.name;
-    if (btn === 'clear') {
+    if (name === 'clear') {
       this.clear();
-    } else if (btn === 'delete') {
+    } else if (name === 'delete') {
       let curr = this.state.largeViewingWindow;
-
-    } else if (btn === '=') {
+      curr = curr.slice(0, curr.length - 1);
+      this.setState({
+        largeViewingWindow: curr
+      });
+    } else if (name === '=') {
       this.calculate();
     }
   }
@@ -43,7 +46,7 @@ class App extends React.Component {
   // clear
   clear() {
     this.setState({
-      viewingWindow: ''
+      largeViewingWindow: ''
     });
   }
   
