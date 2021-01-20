@@ -6,28 +6,28 @@ class Buttons extends React.Component {
   render() {
     return (
       <div className="btn-wrapper">
-        <button className="btn-double" name="clear">Clear</button>
+        <button className="btn-double" name="clear" onClick={e => {this.props.btnClick(e)}}>Clear</button>
         <button name="delete" onClick={e => {this.props.btnClick(e)}}>Delete</button>
-        <button name="÷">÷</button>
+        <button name="÷" onClick={e => {this.props.btnClick(e)}}>÷</button>
 
-        <button name="7">7</button>
-        <button name="8">8</button>
-        <button name="9">9</button>
-        <button name="x">x</button>
+        <button name="7" onClick={e => {this.props.btnClick(e)}}>7</button>
+        <button name="8" onClick={e => {this.props.btnClick(e)}}>8</button>
+        <button name="9" onClick={e => {this.props.btnClick(e)}}>9</button>
+        <button name="x" onClick={e => {this.props.btnClick(e)}}>x</button>
 
-        <button name="4">4</button>
-        <button name="5">5</button>
-        <button name="6">6</button>
-        <button name="-">-</button>
+        <button name="4" onClick={e => {this.props.btnClick(e)}}>4</button>
+        <button name="5" onClick={e => {this.props.btnClick(e)}}>5</button>
+        <button name="6" onClick={e => {this.props.btnClick(e)}}>6</button>
+        <button name="-" onClick={e => {this.props.btnClick(e)}}>-</button>
 
-        <button name="1">1</button>
-        <button name="2">2</button>
-        <button name="3">3</button>
-        <button name="+">+</button>
+        <button name="1" onClick={e => {this.props.btnClick(e)}}>1</button>
+        <button name="2" onClick={e => {this.props.btnClick(e)}}>2</button>
+        <button name="3" onClick={e => {this.props.btnClick(e)}}>3</button>
+        <button name="+" onClick={e => {this.props.btnClick(e)}}>+</button>
 
-        <button name="0">0</button>
-        <button name=".">.</button>
-        <button className="btn-double" name="=">=</button>
+        <button name="0" onClick={e => {this.props.btnClick(e)}}>0</button>
+        <button name="." onClick={e => {this.props.btnClick(e)}}>.</button>
+        <button className="btn-double" name="=" onClick={e => {this.props.btnClick(e)}}>=</button>
       </div>
     )
   }
