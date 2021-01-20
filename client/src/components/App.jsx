@@ -12,34 +12,25 @@ class App extends React.Component {
     }
 
     this.btnClick = this.btnClick.bind(this);
-    this.calculate = this.calculate.bind(this);
     this.clear = this.clear.bind(this);
+    this.delete = this.delete.bind(this);
+    this.calculate = this.calculate.bind(this);
   }
 
   // button clicks
   btnClick(btn) {
     let name = btn.target.name;
+
     if (name === 'clear') {
       this.clear();
     } else if (name === 'delete') {
-      let curr = this.state.largeViewingWindow;
-      curr = curr.slice(0, curr.length - 1);
-      this.setState({
-        largeViewingWindow: curr
-      });
+      this.delete();
     } else if (name === '=') {
       this.calculate();
-    }
-  }
-
-  // calculate
-  calculate() {
-    let result = eval(this.largeViewingWindow);
-    if (result) {
-      this.largeViewingWindow = result;
     } else {
-      this.clear();
-      throw new Error ('Arithmetic error');
+      this.setState({
+        largeViewingWindow: this.state.largeViewingWindow += name
+      });
     }
   }
 
@@ -49,6 +40,35 @@ class App extends React.Component {
       largeViewingWindow: ''
     });
   }
+
+  // delete
+  delete() {
+    let curr = this.state.largeViewingWindow;
+    curr = curr.slice(0, curr.length - 1);
+    this.setState({
+      largeViewingWindow: curr
+    });
+  }
+
+  // calculate
+  calculate() {
+    let result = eval(this.state.largeViewingWindow);
+    if (result) {
+      this.setState({
+        largeViewingWindow: result
+      });
+    } else {
+      this.setState({
+        largeViewingWindow: 'error'
+      });
+
+      // throw new Error ('Arithmetic error');
+    }
+  }
+
+  // add on equation
+
+
   
   render() {
     return (
