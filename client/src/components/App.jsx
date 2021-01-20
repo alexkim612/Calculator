@@ -1,7 +1,6 @@
 import React from 'react';
 import Buttons from './Buttons.jsx';
 import History from './History.jsx';
-import ViewingWindow from './ViewingWindow.jsx';
 
 class App extends React.Component {
   constructor(){
@@ -61,29 +60,18 @@ class App extends React.Component {
       this.setState({
         largeViewingWindow: 'error'
       });
-
-      // throw new Error ('Arithmetic error');
     }
   }
 
-  // add on equation
-
-
-  
   render() {
     return (
       <div>
-        <ViewingWindow viewingWindow={this.viewingWindow}>
-        </ViewingWindow>
         <div className="largeViewingWindow">
           <p>{this.state.largeViewingWindow}</p>
         </div>
 
         <Buttons btnClick={this.btnClick}>
         </Buttons>
-
-        <History>
-        </History>
       </div>
     );
   }
