@@ -1,10 +1,17 @@
 const express = require('express');
 const path = require('path');
-const app = express();
+const app = require('express')();
+const http = require('http').Server(app);
+
 const PORT = 9000;
+const io = require('socket.io')(http);
 
 //serve files from dist
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
+//socket connection
+io.on('connection', (socket) => console.log('a user connected'));
+
 //notification on open server
-app.listen(PORT, () => console.log(`listening on port ${PORT}!`));
+http.listen(PORT, () => console.log(`listening on port ${PORT}!`));
+
