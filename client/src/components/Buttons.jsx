@@ -6,7 +6,7 @@ class Buttons extends React.Component {
   render() {
     return (
       <div className="btn-wrapper">
-        <button className="btn-double" name="clear" onClick={e => {this.props.btnClick(e)}}>Clear</button>
+        <button className="clear" name="clear" onClick={e => {this.props.btnClick(e)}}>Clear</button>
         <button name="delete" onClick={e => {this.props.btnClick(e)}}>Delete</button>
         <button name="/" onClick={e => {this.props.btnClick(e)}}>÷</button>
 
@@ -27,7 +27,7 @@ class Buttons extends React.Component {
 
         <button name="0" onClick={e => {this.props.btnClick(e)}}>0</button>
         <button name="." onClick={e => {this.props.btnClick(e)}}>.</button>
-        <button className="btn-double" name="=" onClick={e => {this.props.btnClick(e)}}>=</button>
+        <button className="equal" name="=" onClick={e => {this.props.btnClick(e)}}>=</button>
       </div>
     )
   }
