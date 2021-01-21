@@ -11,8 +11,10 @@ class App extends React.Component {
     super();
 
     this.state = {
-      largeViewingWindow: '1+1'
+      largeViewingWindow: '',
+      history: ['a', 'b', 'c']
     }
+
     socket = socketIOClient(SERVER);
     socket.on('connection', () => {
       console.log('connected to back-end App');
@@ -84,7 +86,7 @@ class App extends React.Component {
         <Buttons btnClick={this.btnClick}>
         </Buttons>
         
-        <History></History>
+        <History history={this.state.history}></History>
       </div>
     );
   }

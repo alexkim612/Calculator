@@ -13,7 +13,8 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 io.on('connection', (socket) => {
   console.log('a user connected');
   socket.on('result', (result) => {
-    console.log(result);
+    // console.log(result);
+    io.emit('result', result);
   });
 });
 
