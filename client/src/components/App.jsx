@@ -1,6 +1,9 @@
 import React from 'react';
 import Buttons from './Buttons.jsx';
-import History from './History.jsx';
+const SERVER = 'http://localhost:9000'
+
+import socketIOClient from 'socket.io-client';
+var socket;
 
 class App extends React.Component {
   constructor(){
@@ -9,6 +12,10 @@ class App extends React.Component {
     this.state = {
       largeViewingWindow: '1+1'
     }
+    socket = socketIOClient(SERVER);
+    socket.on('connection', () => {
+      console.log('connected to back-end App');
+    });
 
     this.btnClick = this.btnClick.bind(this);
     this.clear = this.clear.bind(this);
@@ -51,17 +58,20 @@ class App extends React.Component {
 
   // calculate
   calculate() {
-    let result = eval(this.state.largeViewingWindow);
-    if (result) {
+    try {
+      eval(this.state.largeViewingWindow);
+      let result = eval(this.state.largeViewingWindow);
+      socket.emit('result', `${this.state.largeViewingWindow} = ${result}`);
       this.setState({
         largeViewingWindow: result
       });
-    } else {
+    } catch(e) {
       this.setState({
         largeViewingWindow: 'error'
       });
     }
   }
+
 
   render() {
     return (

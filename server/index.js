@@ -12,7 +12,9 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 //socket connection
 io.on('connection', (socket) => {
   console.log('a user connected');
-  socket.emit('connection', null);
+  socket.on('result', (result) => {
+    console.log(result);
+  });
 });
 
 //notification on open server

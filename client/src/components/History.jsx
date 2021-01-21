@@ -14,7 +14,7 @@ class History extends React.Component {
 
     socket = socketIOClient(SERVER);
     socket.on('connection', () => {
-      console.log('connected to back-end');
+      console.log('connected to back-end History');
     });
   }
   
