@@ -11,8 +11,7 @@ class App extends React.Component {
     super();
 
     this.state = {
-      largeViewingWindow: '',
-      history: ['a', 'b', 'c']
+      largeViewingWindow: ''
     }
 
     socket = socketIOClient(SERVER);
@@ -64,7 +63,9 @@ class App extends React.Component {
     try {
       eval(this.state.largeViewingWindow);
       let result = eval(this.state.largeViewingWindow);
-      socket.emit('result', `${this.state.largeViewingWindow} = ${result}`);
+
+      this.sendResult(result);
+
       this.setState({
         largeViewingWindow: result
       });
@@ -73,6 +74,11 @@ class App extends React.Component {
         largeViewingWindow: 'error'
       });
     }
+  }
+
+  // send results to server
+  sendResult(result) {
+    socket.emit('result', `${this.state.largeViewingWindow} = ${result}`);
   }
 
 
