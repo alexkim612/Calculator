@@ -10,7 +10,10 @@ const io = require('socket.io')(http);
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
 //socket connection
-io.on('connection', (socket) => console.log('a user connected'));
+io.on('connection', (socket) => {
+  console.log('a user connected');
+  socket.emit('connection', null);
+});
 
 //notification on open server
 http.listen(PORT, () => console.log(`listening on port ${PORT}!`));

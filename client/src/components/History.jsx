@@ -1,22 +1,24 @@
 import React from 'react';
-import socketClient from 'socket.io-client';
 const SERVER = 'http://localhost:9000'
+
+import socketIOClient from 'socket.io-client';
+var socket;
 
 class History extends React.Component {
   constructor() {
     super();
 
     this.state = {
-
+      
     }
+
+    socket = socketIOClient(SERVER);
+    socket.on('connection', () => {
+      console.log('connected to back-end');
+    });
   }
   
   render() {
-    let socket = socketClient(SERVER);
-    socket.on('connection', () => {
-      console.log('connected to backend');
-    });
-
     return (
       <div className='history-wrapper'>
         <h3 className='history-header'>History</h3>
