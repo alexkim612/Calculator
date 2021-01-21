@@ -1,7 +1,7 @@
 * {
   font-family: 'Helvetica', 'Arial', sans-serif, 'Khula', sans-serif,
     'Helvetica', sans-serif;
-  font-size: 12pt;
+  font-size: 16pt;
 }
 
 body {
@@ -35,9 +35,7 @@ body {
 }
 
 button {
-}
-
-.btn-double {
+  height: 55px;
 }
 
 /* History */
