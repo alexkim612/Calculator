@@ -11,7 +11,7 @@ body {
   background-color: white;
 }
 
-/* Viewing Window */
+/* --- Viewing Window --- */
 
 .largeViewingWindow {
   width: 500px;
@@ -21,7 +21,7 @@ body {
   text-align: right;
 }
 
-/* Buttons */
+/* --- Buttons --- */
 
 .btn-wrapper {
   display: grid;
@@ -38,4 +38,26 @@ button {
   height: 55px;
 }
 
-/* History */
+/* --- History --- */
+
+.history-wrapper {
+  height: 400px;
+  width: 500px;
+  padding: 2px 5px 2px 5px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+}
+
+.history-header {
+  height: 30px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.history-feed {
+  height: 350px;
+  width: 100%;
+}
