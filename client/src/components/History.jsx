@@ -11,11 +11,9 @@ class History extends React.Component {
         <h3 className='history-header'>History</h3>
 
         <div className='history-feed'>
-          <p>ID : 1+1=2</p>
-          <p>ID : 2+2=4</p>
-          <p>ID : 2+2=4</p>
-          <p>ID : 2+2=4</p>
-          <p>ID : 2+2=4</p>
+          {this.props.history.map((result, i) => 
+            <Entry key={i} entry={result}></Entry>
+          )}
         </div>
       </div>
     )
