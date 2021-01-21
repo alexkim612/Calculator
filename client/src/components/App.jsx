@@ -1,7 +1,8 @@
 import React from 'react';
 import Buttons from './Buttons.jsx';
-const SERVER = 'http://localhost:9000'
+import History from './History.jsx';
 
+const SERVER = 'http://localhost:9000'
 import socketIOClient from 'socket.io-client';
 var socket;
 
@@ -82,6 +83,8 @@ class App extends React.Component {
 
         <Buttons btnClick={this.btnClick}>
         </Buttons>
+        
+        <History></History>
       </div>
     );
   }
