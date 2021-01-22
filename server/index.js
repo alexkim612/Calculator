@@ -5,7 +5,7 @@ const http = require('http').Server(app);
 
 const db = require('../db/index.js');
 
-const PORT = 9000;
+const PORT = 'http://54.201.182.157:9000';
 const io = require('socket.io')(http);
 
 //serve files from dist
@@ -32,7 +32,7 @@ io.on('connection', (socket) => {
 });
 
 // retrieve first five entries from db
-app.get('http://54.201.182.157:9000/firstFive', (req, res) => {
+app.get('/firstFive', (req, res) => {
   db.getFirstFive((error, results) => {
     if (error) {
       console.log(error);
