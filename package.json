@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -d --watch",
-    "schema": "mysql -u root < ./db/calcSchema.sql"
+    "schema": "mysql -u root < ./db/calcSchema.sql",
+    "start": "node ./server/index.js"
   },
   "repository": {
     "type": "git",
