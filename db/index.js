@@ -34,5 +34,5 @@ const getFirstFive = (cb) => {
   });
 }
 
-module.exports = insert;
-module.exports = getFirstFive;
+module.exports.insert = insert;
+module.exports.getFirstFive = getFirstFive;

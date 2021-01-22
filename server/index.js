@@ -3,8 +3,8 @@ const path = require('path');
 const app = express();
 const http = require('http').Server(app);
 
-const insert = require('../db/index.js');
-const getFirstFive = require('../db/index.js');
+const db = require('../db/index.js');
+// const getFirstFive = require('../db/index.js');
 
 const PORT = 9000;
 const io = require('socket.io')(http);
@@ -22,18 +22,18 @@ io.on('connection', (socket) => {
     io.emit('result', result);
 
     //record in db
-    insert(result, (error, results) => {
+    db.insert(result, (error, results) => {
       if (error) {
         console.log(error);
       } else {
-        res.sendStatus(200);
+        console.log('inserted');
       }
     });
   });
 });
 
 app.get('/firstFive', (req, res) => {
-  getFirstFive((error, results) => {
+  db.getFirstFive((error, results) => {
     if (error) {
       console.log(error);
     } else {
