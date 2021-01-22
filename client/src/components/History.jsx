@@ -10,12 +10,12 @@ class History extends React.Component {
     super();
 
     this.state = {
-      history: ['a', 'b', 'c']
+      history: []
     }
 
     socket = socketIOClient(SERVER);
     socket.on('connection', () => {
-        console.log('connected to back-end History');
+        console.log('connected to History');
       });
   }
 
@@ -29,7 +29,7 @@ class History extends React.Component {
       let newHistory = this.state.history;
 
       if (this.state.history.length >= 5) newHistory.pop();
-      
+
       newHistory.unshift(newResult);
       this.setState({
         history: newHistory

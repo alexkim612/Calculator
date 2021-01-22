@@ -1,15 +1,26 @@
 const express = require('express');
 const path = require('path');
-const app = require('express')();
+const app = express();
 const http = require('http').Server(app);
 
 const db = require('../db/index.js');
+const getFirstFive = require('../db/index.js');
 
 const PORT = 9000;
 const io = require('socket.io')(http);
 
 //serve files from dist
 app.use(express.static(path.join(__dirname, '../client/dist')));
+
+app.get('/firstFive', (req, res) => {
+  getFirstFive((error, results) => {
+    if (error) {
+      console.log(error);
+    } else {
+      res.send(results);
+    }
+  });
+});
 
 //socket connection
 io.on('connection', (socket) => {
@@ -19,7 +30,6 @@ io.on('connection', (socket) => {
   socket.on('result', (result) => {
     //send out result to all users
     io.emit('result', result);
-    console.log(result, typeof(result));
 
     //record in db
     db.query(`INSERT INTO calc (equation) VALUES ('${result}')`);
