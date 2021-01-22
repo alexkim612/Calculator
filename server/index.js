@@ -21,7 +21,7 @@ io.on('connection', (socket) => {
     //send out result to all users
     io.emit('result', result);
 
-    //record in db
+    //insert into db
     db.insert(result, (error, results) => {
       if (error) {
         console.log(error);
@@ -32,6 +32,7 @@ io.on('connection', (socket) => {
   });
 });
 
+// retrieve first five entries from db
 app.get('/firstFive', (req, res) => {
   db.getFirstFive((error, results) => {
     if (error) {

@@ -21,10 +21,11 @@ class History extends React.Component {
   }
 
   componentDidMount() {
-    console.log('updated');
+    // only grab on first time loading
     if (this.state.history.length === 0) {
       this.getFirstFive();
     }
+
     this.updateHistory()
   }
 
@@ -67,7 +68,6 @@ class History extends React.Component {
   render() {
     return (
       <div className='history-wrapper'>
-
         <h3 className='history-header'>History</h3>
 
         <div className='history-feed'>

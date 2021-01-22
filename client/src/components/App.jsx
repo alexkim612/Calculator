@@ -82,7 +82,6 @@ class App extends React.Component {
     socket.emit('result', `${this.state.largeViewingWindow} = ${result}`);
   }
 
-
   render() {
     return (
       <div>
