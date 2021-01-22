@@ -12,8 +12,8 @@ db.connect((err) => {
   console.log('connected to db');
 });
 
-const getFirstFive = (callback) => {
-  db.query(`SELECT * FROM calc ORDER BY id DESC LIMIT 5`, (err, result) => {
+const insert = (entry, callback) => {
+  db.query(`INSERT INTO calc (equation) VALUES ('${entry}')`, (err, result) => {
     if (err) {
       console.log(err);
     } else {
@@ -23,5 +23,16 @@ const getFirstFive = (callback) => {
   });
 }
 
-module.exports = db;
+const getFirstFive = (cb) => {
+  db.query(`SELECT * FROM calc ORDER BY id DESC LIMIT 5`, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(result);
+      cb(null, result);
+    }
+  });
+}
+
+module.exports = insert;
 module.exports = getFirstFive;

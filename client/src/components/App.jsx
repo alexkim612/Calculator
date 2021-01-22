@@ -1,7 +1,6 @@
 import React from 'react';
 import Buttons from './Buttons.jsx';
 import History from './History.jsx';
-import axios from 'axios';
 
 const SERVER = 'http://localhost:9000'
 import socketIOClient from 'socket.io-client';
@@ -13,7 +12,6 @@ class App extends React.Component {
 
     this.state = {
       largeViewingWindow: '',
-      history: []
     }
 
     socket = socketIOClient(SERVER);
@@ -25,20 +23,6 @@ class App extends React.Component {
     this.clear = this.clear.bind(this);
     this.delete = this.delete.bind(this);
     this.calculate = this.calculate.bind(this);
-  }
-
-  componentDidMount() {
-    this.getFirstFive();
-  }
-
-  getFirstFive() {
-    axios.get('/firstFive')
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
   }
 
   // button clicks
@@ -85,6 +69,7 @@ class App extends React.Component {
       this.setState({
         largeViewingWindow: result
       });
+
     } catch(e) {
       this.setState({
         largeViewingWindow: 'error'
