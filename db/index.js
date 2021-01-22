@@ -3,14 +3,15 @@ const mysql = require('mysql');
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'pwZkINfuz0&,',
   database: 'calc'
 });
 
 db.connect((err) => {
-  if (err) console.log('error connection');
-
-  console.log('connected to db');
+  if (err) {
+    console.log('error connection');
+  } else {
+    console.log('connected to db');
+  }
 });
 
 //insert query

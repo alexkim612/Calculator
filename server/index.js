@@ -32,7 +32,7 @@ io.on('connection', (socket) => {
 });
 
 // retrieve first five entries from db
-app.get('/firstFive', (req, res) => {
+app.get('http://54.201.182.157:9000/firstFive', (req, res) => {
   db.getFirstFive((error, results) => {
     if (error) {
       console.log(error);

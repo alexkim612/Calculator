@@ -2,7 +2,7 @@ import React from 'react';
 import Entry from './Entry.jsx';
 import axios from 'axios';
 
-const SERVER = 'http://34.222.119.64:9000'
+const SERVER = 'http://54.201.182.157:9000'
 import socketIOClient from 'socket.io-client';
 var socket;
 
@@ -31,7 +31,7 @@ class History extends React.Component {
 
   // get first five entries from db
   getFirstFive() {
-    axios.get('/firstFive')
+    axios.get('http://54.201.182.157:9000/firstFive')
     .then((response) => {
       let data = response.data;
       let firstFiveEntries = [];
