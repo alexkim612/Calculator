@@ -4,7 +4,6 @@ const app = express();
 const http = require('http').Server(app);
 
 const db = require('../db/index.js');
-// const getFirstFive = require('../db/index.js');
 
 const PORT = 9000;
 const io = require('socket.io')(http);

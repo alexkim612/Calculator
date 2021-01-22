@@ -2,7 +2,7 @@ import React from 'react';
 import Entry from './Entry.jsx';
 import axios from 'axios';
 
-const SERVER = 'http://localhost:9000'
+const SERVER = 'http://34.222.119.64:9000'
 import socketIOClient from 'socket.io-client';
 var socket;
 

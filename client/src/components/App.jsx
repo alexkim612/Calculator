@@ -2,7 +2,7 @@ import React from 'react';
 import Buttons from './Buttons.jsx';
 import History from './History.jsx';
 
-const SERVER = 'http://localhost:9000'
+const SERVER = 'http://34.222.119.64:9000'
 import socketIOClient from 'socket.io-client';
 var socket;
 
