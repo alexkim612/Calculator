@@ -1,0 +1,10 @@
+CREATE DATABASE calc;
+
+USE calc;
+
+CREATE TABLE calc (
+  id INT NOT NULL AUTO_INCREMENT,
+  equation VARCHAR(256),
+  
+  PRIMARY KEY(id)
+);
