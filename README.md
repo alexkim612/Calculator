@@ -1,5 +1,4 @@
 # Calculator
-Sezzle Calculator Take Home Project
 
 A simple, functional calculator which includes a persisting history of the last 5 calculations done in real-time across all user!
 
@@ -11,3 +10,7 @@ A simple, functional calculator which includes a persisting history of the last 
 * [socket.io](https://socket.io/)
 * [MySQL](https://www.mysql.com/)
 * [Express](https://expressjs.com/)
+
+## Acknowledgement
+
+Thank you Sezzle for the consideration!
