@@ -12,5 +12,3 @@ A simple, functional calculator which includes a persisting history of the last 
 * [Express](https://expressjs.com/)
 
 ## Acknowledgement
-
-Thank you Sezzle for the consideration!
